@@ -1,0 +1,16 @@
+<img src="{{ vm.rental.image }}">
+<h2>{{ vm.rental.address_line1 }}</h2>
+<h2>{{ vm.rental.address_line2 }}</h2>
+
+<h3>{{ vm.rental.post_code }}</h3>
+<h3>{{ vm.rental.country }}</h3>
+
+<h6>Property owned by: {{ vm.rental.user.full_name }}</h6>
+
+<h4>Reviews</h4>
+<ul>
+  <li ng-show="vm.rental.reviews.length === 0">There are no reviews for this property</li>
+  <li ng-repeat="review in vm.rental.reviews"></li>
+</ul>
+
+<button ng-click="vm.createRequest()" ng-show="vm.rental.user.id !== main.user.id">Create Request</button>

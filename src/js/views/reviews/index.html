@@ -1,0 +1,7 @@
+<h1>Review</h1>
+<ul>
+  <li ng-repeat="review in vm.review">
+    <h2 ui-sref="reviewsShow({ id: review.id })">{{ review.name }}</h2>
+    <!-- <h4>{{ genre.user.username }}</h4> -->
+  </li>
+</ul>

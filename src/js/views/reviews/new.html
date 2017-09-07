@@ -1,0 +1,15 @@
+<h1>New Property</h1>
+
+{{ vm.property }}
+
+<form ng-submit="vm.addProperty()">
+  <label for="title">Title</label>
+  <input type="text" id="title" ng-model="vm.Property.title">
+  <br />
+  <label for="reviews">Reviews</label>
+  <div ng-repeat="review in vm.reviews">
+    <input type="checkbox" ng-click="vm.selectReview(review.id)"> {{ review.name }}
+  </div>
+
+  <input type="submit">
+</form>

@@ -1,0 +1,33 @@
+<img src="{{ vm.user.image }}">
+<h1>{{ vm.user.username }}</h1>
+<h3>{{ vm.user.full_name }}</h3>
+<h4>{{ vm.user.email }}</h4>
+
+<h2>Properties owned by {{ vm.user.full_name }}</h2>
+<ul>
+  <li ng-repeat="rental in vm.user.rentals">
+    <p>{{ rental.post_code }}</p>
+  </li>
+</ul>
+
+<h2>Pending Requests</h2>
+<h4>Sent Requests</h4>
+<ul>
+  <ul>
+    <li ng-show="vm.user.sent_requests.length === 0"><p>You have no sent requests</p></li>
+    <li ng-repeat="request in vm.user.sent_requests">
+      <p>Request sent to <b>{{ request.receiver.first_name }} {{ request.receiver.last_name }}</b> for sit at <b>{{ request.rental.address_line1 }}</b> - <i>{{ request.status }}</i></p>
+    </li>
+  </ul>
+</ul>
+<h4>Received Requests</h4>
+<ul>
+  <ul>
+    <li ng-show="vm.user.received_requests.length === 0"><p>You have no received requests</p></li>
+    <li ng-show="request.status === 'Pending'" ng-repeat="request in vm.user.received_requests">
+      <p>Request made from <b>{{ request.sender.first_name }} {{ request.sender.last_name }}</b> for sit at <b>{{ request.rental.address_line1 }}</b>
+        <button ng-click="vm.acceptRequest(request)" class="btn btn-success">Accept</button>
+        <button ng-click="vm.rejectRequest(request)" class="btn btn-danger">Reject</button></p>
+    </li>
+  </ul>
+</ul>
