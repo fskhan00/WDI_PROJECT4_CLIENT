@@ -1,7 +1,7 @@
 <h1>Rentals Index</h1>
 <ul>
   <li ng-hide="rental.user.id === main.user.id" ng-repeat="rental in vm.rentals">
-    <p ui-sref="rentalsShow({ id: rental.id })">{{ rental.post_code }}</p>
+    <p ui-sref="rentalsShow({ id: rental.id })">{{ rental.post_code }} - {{rental.city}}</p>
   </li>
 </ul>
 

@@ -1,0 +1,45 @@
+img.img-thumbnail{
+  height:250px;
+  width:220px;
+  padding:6px;
+  background-color: #1fa29e;
+}
+
+
+.owned{
+  float: left;
+}
+
+body{
+  background-image: url("https://wallpaperbrowse.com/media/images/background-7.jpg");
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 20px;
+}
+.pending{
+  float: left;
+}
+.panel{
+  color: #fff;
+}
+.panel-default{
+  border-color: black;
+  background-color: #6f676f;
+  margin-right: 210px;
+}
+.jumbotron{
+  background-color: #528386;
+}
+.foot-container{
+  border-radius: 25px;
+}
+
+.rooms{
+  margin-top: 20px;
+}
+
+.details .img-thumbnail{
+  margin-left: 280px;
+}
+.rooms{
+  font-size: 20px;
+}

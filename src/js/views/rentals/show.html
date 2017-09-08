@@ -1,16 +1,25 @@
-<img src="{{ vm.rental.image }}">
-<h2>{{ vm.rental.address_line1 }}</h2>
-<h2>{{ vm.rental.address_line2 }}</h2>
+<div class="details">
+  <img class="img-thumbnail" src="{{ vm.rental.image }}" style="width:500px">
 
-<h3>{{ vm.rental.post_code }}</h3>
-<h3>{{ vm.rental.country }}</h3>
+  <div class="rooms">
+    <div class="panel panel-default container-fluid">
+      <h3>Number of Rooms: {{ vm.rental.rooms }}</h3>
+      <h3>{{ vm.rental.address_line1 }} {{ vm.rental.address_line2 }} - {{ vm.rental.post_code }}</h3>
+    </div>
+  </div>
 
-<h6>Property owned by: {{ vm.rental.user.full_name }}</h6>
 
-<h4>Reviews</h4>
-<ul>
-  <li ng-show="vm.rental.reviews.length === 0">There are no reviews for this property</li>
-  <li ng-repeat="review in vm.rental.reviews"></li>
-</ul>
 
-<button ng-click="vm.createRequest()" ng-show="vm.rental.user.id !== main.user.id">Create Request</button>
+
+  <b>Property owned by: {{ vm.rental.user.full_name }}</b>
+
+  <h4>Reviews</h4>
+  <ul>
+    <li ng-show="vm.rental.reviews.length === 0">There are no reviews for this property</li>
+    <li ng-repeat="review in vm.rental.reviews">
+      {{ review.review }} by {{ review.user.first_name }} {{ review.user.last_name }}
+    </li>
+  </ul>
+
+  <button ng-click="vm.createRequest()" ng-show="vm.rental.user.id !== main.user.id" style="border-radius:6px">Create Request</button>
+</div>
